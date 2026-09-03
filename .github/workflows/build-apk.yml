@@ -1,4 +1,4 @@
-name: Convert PWA to Release AAB 
+name: Convert PWA to Release AAB
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
       - name: Create Capacitor Config Safely
         run: |
           echo '{' > capacitor.config.json
-          echo '  "appId": "com.gotip.app",' >> capacitor.config.json
+          echo '  "appId": "com.gotips.app",' >> capacitor.config.json
           echo '  "appName": "Go Tip",' >> capacitor.config.json
           echo '  "webDir": "www",' >> capacitor.config.json
           echo '  "bundledWebRuntime": false,' >> capacitor.config.json
@@ -70,9 +70,9 @@ jobs:
 
       - name: Fix Android Hardware Back Button
         run: |
-          mkdir -p android/app/src/main/java/com/gotip/app
-          cat << 'EOF' > android/app/src/main/java/com/gotip/app/MainActivity.java
-          package com.gotip.app;
+          mkdir -p android/app/src/main/java/com/gotips/app
+          cat << 'EOF' > android/app/src/main/java/com/gotips/app/MainActivity.java
+          package com.gotips.app;
 
           import com.getcapacitor.BridgeActivity;
 
