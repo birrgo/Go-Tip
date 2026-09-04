@@ -1,4 +1,4 @@
-Name: Convert PWA to Release AAB
+name: Convert PWA to Release AAB
 
 on:
   push:
@@ -63,11 +63,10 @@ jobs:
           sed -i 's/targetSdkVersion .*/targetSdkVersion 36/' android/app/build.gradle
           sed -i 's/compileSdkVersion .*/compileSdkVersion 36/' android/app/build.gradle
 
-      - name: Set Dynamic Version Code (Version 2 Fix)
+      - name: Set Version Code to 2
         run: |
-          VERSION_CODE=$(( ${{ github.run_number }} + 1 ))
-          sed -i "s/versionCode 1/versionCode $VERSION_CODE/" android/app/build.gradle
-          sed -i "s/versionName \"1.0\"/versionName \"1.0.$VERSION_CODE\"/" android/app/build.gradle
+          sed -i 's/versionCode 1/versionCode 2/' android/app/build.gradle
+          sed -i 's/versionName "1.0"/versionName "2.0"/' android/app/build.gradle
 
       - name: Fix Android Hardware Back Button
         run: |
