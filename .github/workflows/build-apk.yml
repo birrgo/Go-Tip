@@ -10,7 +10,7 @@ env:
   APP_NAME: "Go Tip"
   PACKAGE_NAME: "com.gotip.app"
   # Replace with the actual AdMob App ID for Go Tip if different
-  ADMOB_APP_ID: "ca-app-pub-1118823918279022~8410967279" 
+  ADMOB_APP_ID: "ca-app-pub-1118823918279022~4049884588" 
 
 jobs:
   build:
