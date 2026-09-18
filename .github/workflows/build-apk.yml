@@ -1,4 +1,4 @@
-name: Convert PWA to Release AAB (Go Tip)
+Name: Convert PWA to Release AAB (Go Tip)
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 env:
   APP_NAME: "Go Tip"
-  PACKAGE_NAME: "com.gotip.app"
+  PACKAGE_NAME: "com.gotips.app"
   # Replace with the actual AdMob App ID for Go Tip if different
   ADMOB_APP_ID: "ca-app-pub-1118823918279022~4049884588" 
 
@@ -120,9 +120,9 @@ jobs:
           EOF
 
           # 2. Generate the Java Service File (OneSignal SDK v5)
-          mkdir -p android/app/src/main/java/com/gotip/app
-          cat << 'EOF' > android/app/src/main/java/com/gotip/app/CustomNotificationService.java
-          package com.gotip.app; 
+          mkdir -p android/app/src/main/java/com/gotips/app
+          cat << 'EOF' > android/app/src/main/java/com/gotips/app/CustomNotificationService.java
+          package com.gotips.app; 
           
           import android.content.Context;
           import android.graphics.Bitmap;
@@ -169,7 +169,7 @@ jobs:
           EOF
 
           # 3. Register the Java extension inside AndroidManifest.xml
-          sed -i '/<\/application>/i \        <meta-data android:name="com.onesignal.NotificationServiceExtension" android:value="com.gotip.app.CustomNotificationService" />' android/app/src/main/AndroidManifest.xml
+          sed -i '/<\/application>/i \        <meta-data android:name="com.onesignal.NotificationServiceExtension" android:value="com.gotips.app.CustomNotificationService" />' android/app/src/main/AndroidManifest.xml
 
       - name: Set Custom App and Notification Icons
         run: |
@@ -228,9 +228,9 @@ jobs:
 
       - name: Fix Android Hardware Back Button
         run: |
-          mkdir -p android/app/src/main/java/com/gotip/app
-          cat << 'EOF' > android/app/src/main/java/com/gotip/app/MainActivity.java
-          package com.gotip.app;
+          mkdir -p android/app/src/main/java/com/gotips/app
+          cat << 'EOF' > android/app/src/main/java/com/gotips/app/MainActivity.java
+          package com.gotips.app;
 
           import com.getcapacitor.BridgeActivity;
 
