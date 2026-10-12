@@ -10,8 +10,8 @@ env:
   APP_NAME: "Go Tip"
   PACKAGE_NAME: "com.gotips.app"
   ADMOB_APP_ID: "ca-app-pub-1118823918279022~4049884588" 
-  APP_VERSION: "2.0.4"
-  VERSION_CODE: "30"
+  APP_VERSION: "2.0.5"
+  VERSION_CODE: "31"
 
 jobs:
   build:
